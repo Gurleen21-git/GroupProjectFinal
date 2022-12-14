@@ -9,30 +9,14 @@ global.filteredData;
 const getUpcomingTest=async(req,res)=>{
       const g2GetDetails = await g2Details.find({});
       req.session.AllTest= g2GetDetails;
-
       res.render("upcomingTests",{g2GetDetails:g2GetDetails});
 }
 
 const getFilteredData= async(req,res)=>{
-      const g2GetDetails = await g2Details.find({});
-      const filter=  g2GetDetails.filter(x=>{
-            if(x.testType==req.params.testType){
-               return x.toJSON();
-            }
-
-      })
-      console.log(filter);
-      filter.forEach(element => {
-            firstname=element.firstname,
-            lastname=element.lastname,
-            DOB=element.DOB,
-            licensenumber=element.licensenumber,
-            age=element.age,
-            testType=element.testType
-      });
-
-      console.log("filtered",filter);
-      res.render("upcomingTests",{g2GetDetails:filter});
+      const testType=req.body.testType;
+      const filteredData = await g2Details.find({testType:testType});
+     
+      res.render("upcomingTests",{g2GetDetails:filteredData});
 }
 
 const postTestResults= async(req,res)=>{

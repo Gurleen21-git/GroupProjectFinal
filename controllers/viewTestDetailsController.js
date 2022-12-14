@@ -25,7 +25,7 @@ const postTestResults=async (req, res) => {
         manufacturedyear:g2Details.manufacturedyear,
         platenumber:g2Details.platenumber,
         testType:"G",
-        comments:req.body.Comments,
+        comments:req.body.comments,
         testResult:req.body.testResult=="Pass"?true:false
      });
      //req.flash('testupdated', 'The results have been submitted');
