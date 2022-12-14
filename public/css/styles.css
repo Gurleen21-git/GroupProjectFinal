@@ -11421,6 +11421,7 @@ display: grid;
     background-color: black !important;
     color: #87CEEB !important;
     border-radius: 100px;
+    width: 50% !important;
   }
 
   .site-heading h1{
@@ -11488,6 +11489,10 @@ display: grid;
     margin: 20px 0;
     width: 50%;
 
+  }
+
+  #refresh{
+    color: #87CEEB !important;
   }
 
 

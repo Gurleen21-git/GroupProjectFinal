@@ -15,7 +15,6 @@ const getUpcomingTest=async(req,res)=>{
 const getFilteredData= async(req,res)=>{
       const testType=req.body.testType;
       const filteredData = await g2Details.find({testType:testType});
-     
       res.render("upcomingTests",{g2GetDetails:filteredData});
 }
 
@@ -27,6 +26,8 @@ const postTestResults= async(req,res)=>{
             g2Details.PassFail=false
       }
 }
+
+
 
 // const getViewDetailsbyID=async (req, res) => {
 //       const g2GetDetails = await g2Details.findById(req.params.id);

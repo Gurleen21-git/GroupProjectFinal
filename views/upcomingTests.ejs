@@ -32,14 +32,20 @@
                                 <div class="form-floating">
                                     <select class="form-control" name="testType">
                                        <option value="">Test Type</option>
-                                       <option value="<%= g2GetDetails[0].testType %>">G</option>
-                                       <option value="<%= g2GetDetails[0].testType %>">G2</option>
+                                       <option value="G">G</option>
+                                       <option value="G2">G2</option>
                     
                                     </select>
                                 </div>
                             </td>
                             <td>
                                 <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Filter</button>
+                            </td>
+                            <td>
+                                <!-- <a id="refresh" href="/upcomingTest">Refresh</a> -->
+
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit" >
+                                    <a id="refresh" href="/upcomingTest">Refresh</a></button>
                             </td>
                         </tr>
                     </table>

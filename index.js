@@ -81,8 +81,10 @@ app.get("/userResults",getPassUserDetails );
 
 app.get("/viewTestResults",getViewResultData );
 
-app.post("/getFilteredData",getFilteredData );
+app.get("/refresh",getUpcomingTest );
 
+
+app.post("/getFilteredData",getFilteredData );
 
 app.post("/g2/post",postG2Controller);
 
