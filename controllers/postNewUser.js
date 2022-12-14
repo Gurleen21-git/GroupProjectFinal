@@ -23,8 +23,7 @@ module.exports = async (req, res) => {
     }
     else{
         passwordNotMatch=true;
-        let errors=[];
-        res.render("signup",{passwordNotMatch,errors});
+        res.render("signup",{passwordNotMatch,errors: req.flash("validationErrors")});
     }
 
   
