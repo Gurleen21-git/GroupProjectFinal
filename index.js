@@ -36,7 +36,7 @@ global.checkUserType=null;
 global.checkUserTypeAdmin=null;
 
 app.use(expressSession({
-  secret: "kaur21", 
+  secret: "gurle575dilver578", 
   resave: false,
   saveUninitialized: true ,
   store: mongoStore.create({mongoUrl:process.env.MONGO_URL})}
