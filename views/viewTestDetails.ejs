@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("layouts/header") -%> 
+    <body>
+        <!-- Navigation-->
+        <%- include("layouts/navbar") -%> 
+        <!-- Page Header-->
+        <header class="masthead">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>View Details</h1>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+   
+          
+            <div class="container px-4 px-lg-5">
+                 
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <form method="POST" action="/post/DriverTestResults">
+                            <table class="table" id="TestDetails">
+                            
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            FirstName
+                                        </th>
+                                        <td>
+                                            <%= g2GetDetails.firstname %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Lastname
+                                        </th>
+                                        <td>
+                                            <%= g2GetDetails.lastname %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            DOB
+                                        </th>
+                                        <td>
+                                            <%= g2GetDetails.DOB %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            License Number
+                                        </th>
+                                        <td>
+                                            <%= g2GetDetails.licensenumber %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Test Type
+                                        </th>
+                                        <td>
+                                            <%= g2GetDetails.testType %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Comments
+                                        </th>
+                                        <td>
+                                           <input type="textarea" value="" name="Comments" placeholder="Place Comments">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Pass/Fail
+                                        </th>
+                                        <td>
+                                            <select class="form-control" name="testResult">
+                                                <option value="">Test Type</option>
+                                                <option value="Pass">Pass</option>
+                                                <option value="Fail">Fail</option>
+                             
+                                             </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td>
+                                            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Submit Result</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                
+            
+                   
+                              
+                            </table>
+
+                        </form>
+                                 
+                         
+                   
+                  
+              
+                </div>
+            </div>
+
+
+         
+        </main>
+        <!-- Footer-->
+        <%- include("layouts/footer") -%> 
+
+        <!-- scripts-->
+        <%- include("layouts/script") -%> 
+    </body>
+</html>

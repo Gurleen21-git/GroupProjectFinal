@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("layouts/header") -%> 
+    <body>
+        <!-- Navigation-->
+        <%- include("layouts/navbar") -%> 
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Your Test Results</h1>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+          
+            <div class="container px-4 px-lg-5">
+             
+               
+                
+               
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+
+                                 
+                            <table class="table" id="TestDetails">
+                   
+                                <tbody>
+                                    <tr >
+                                        <th>
+                                            Driver Name
+                                        </th>
+                                        <th>
+                                            Comments
+                                        </th>
+                                        <th>
+                                            Test Result
+                                        </th>
+                               
+                                
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <%= g2GetDetails.firstname %> <%= g2GetDetails.lastname %>
+                                        </td>
+                                        <td>
+                                            <%= g2GetDetails.comments %>
+                                        </td>
+                                        <td>
+                                            <%= g2GetDetails.testResult == true? "Pass":"Fail" %>
+                                        </td>
+                                      
+                                      
+                                    
+                                    </tr>
+                              
+                                  
+                                </tbody>
+                            </table>
+                   
+                  
+              
+                </div>
+            </div>
+
+        </main>
+        <!-- Footer-->
+        <%- include("layouts/footer") -%> 
+
+        <!-- scripts-->
+        <%- include("layouts/script") -%> 
+    </body>
+</html>

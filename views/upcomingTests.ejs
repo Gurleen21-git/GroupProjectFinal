@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("layouts/header") -%> 
+    <body>
+        <!-- Navigation-->
+        <%- include("layouts/navbar") -%> 
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Upcoming Test</h1>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+          
+            <div class="container px-4 px-lg-5">
+                <% for(var i = 0; i < g2GetDetails.length; i++) {  %>
+                <form method="POST" action="/getFilteredData/<%= g2GetDetails[i].testType %>">
+                    <table class="table" id="filter">
+                        <tr>
+                            <td>
+                                <h4>Filter Here:</h4>
+                            </td>
+                            <td>
+                                <div class="form-floating">
+                                    <select class="form-control" name="testType">
+                                       <option value="">Test Type</option>
+                                       <option value="<%= g2GetDetails[i].testType %>">G</option>
+                                       <option value="<%= g2GetDetails[i].testType %>">G2</option>
+                    
+                                    </select>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Filter</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <% }  %>
+               
+                
+               
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+
+                                 
+                            <table class="table" id="TestDetails">
+                   
+                                <tbody>
+                                    <tr >
+                                        <th>
+                                            Driver Name
+                                        </th>
+                                        <th>
+                                            License Number
+                                        </th>
+                                        <th>
+                                            DOB
+                                        </th>
+                                        <th>
+                                            Age
+                                        </th>
+                                        <th>
+                                            Test Type
+                                        </th>
+                                        <th>
+                                            View Details
+                                        </th>
+                                
+                                       
+                                    </tr>
+                <% for(var i = 0; i < g2GetDetails.length; i++) {  %>
+                                    <tr>
+                                        <td>
+                                            <%= g2GetDetails[i].firstname %> <%= g2GetDetails[i].lastname %>
+                                        </td>
+                                        <td>
+                                            <%= g2GetDetails[i].licensenumber %>
+                                        </td>
+                                        <td>
+                                            <%= g2GetDetails[i].DOB %>
+                                        </td>
+                                        <td>
+                                            <%= g2GetDetails[i].age %>
+                                        </td>
+                                        <td>
+                                            <%= g2GetDetails[i].testType %>
+                                        </td>
+                                      
+                                        <td>  <a href="/viewDetails/<%= g2GetDetails[i]._id %>">viewDetails</a></td>
+                                    </tr>
+                                    <% }  %>
+                                  
+                                </tbody>
+                            </table>
+                   
+                  
+              
+                </div>
+            </div>
+
+
+            <!-- <div class="modal" id="modalDetails" role="dialog">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                FirstName
+                            </th>
+                            <td>
+                                Gurleen
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Lastname
+                            </th>
+                            <td>
+                                Kaur
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                DOB
+                            </th>
+                            <td>
+                                21/02/1998
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                License Number
+                            </th>
+                            <td>
+                                00000000
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Test Type
+                            </th>
+                            <td>
+                                G2
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div> -->
+        </main>
+        <!-- Footer-->
+        <%- include("layouts/footer") -%> 
+
+        <!-- scripts-->
+        <%- include("layouts/script") -%> 
+    </body>
+</html>
