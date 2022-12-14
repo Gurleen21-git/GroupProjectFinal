@@ -97,8 +97,8 @@ app.post("/post/DriverTestResults",postTestResults);
 app.get("/signout",async(req, res) => {
   req.session.destroy();
   global.checkUserType = null;
-  req.session.userId = null;
-  res.render("login");
+  let invalidCred= false;
+  res.redirect("/login");
 });
 
 app.listen(4000,()=>{
