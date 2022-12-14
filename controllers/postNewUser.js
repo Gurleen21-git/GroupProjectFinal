@@ -23,7 +23,8 @@ module.exports = async (req, res) => {
     }
     else{
         passwordNotMatch=true;
-        res.render("signup",{passwordNotMatch});
+        let errors=[];
+        res.render("signup",{passwordNotMatch,errors});
     }
 
   
