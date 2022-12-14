@@ -11480,6 +11480,9 @@ display: grid;
     box-shadow: none;
   }
 
+  .error{
+    color: red;
+  }
 
 
   

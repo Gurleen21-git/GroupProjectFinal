@@ -54,6 +54,11 @@ mongoose.connect(
 
 app.use(flash());
 
+app.use("*", (req, res, next) => {
+  loggedIn = req.session.userId;
+  next();
+});
+
 app.get("/",getloginController);
 
 app.get("/dashboard",homeController);
@@ -90,6 +95,7 @@ app.post("/post/appointment",postAppointmentController);
 app.post("/post/DriverTestResults",postTestResults);
 
 app.get("/signout",async(req, res) => {
+  req.session.destroy();
   global.checkUserType = null;
   req.session.userId = null;
   res.render("login");
