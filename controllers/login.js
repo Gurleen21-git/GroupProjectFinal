@@ -6,7 +6,7 @@ const User = require("../models/User");
 module.exports = (req,res)=> {
     
     const { username, password } = req.body;
-
+    let invalidCred= false;
     User.findOne({username:username}, (error, user)=>{
         if(user){
           
@@ -21,7 +21,8 @@ module.exports = (req,res)=> {
 
                     
                 } else {
-                    res.redirect("/login");
+                    invalidCred=true;
+                    res.render("login",{invalidCred})
                 }
             });
         } else {

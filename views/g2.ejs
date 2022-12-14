@@ -30,26 +30,26 @@
                                 <!-- Personal Information fiels -->
                                 <h5>Personal Information</h5>
                                 <div class="form-floating">
-                                    <input class="form-control" id="firstname" name="firstname" type="text" placeholder="Enter your firstname..." />
+                                    <input class="form-control" id="firstname" name="firstname" type="text" placeholder="Enter your firstname..." required/>
                                     <label for="firstname">First Name</label>
                                     
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="lastname" name="lastname" type="text" placeholder="Enter your lastname..."  />
+                                    <input class="form-control" id="lastname" name="lastname" type="text" placeholder="Enter your lastname..."  required/>
                                     <label for="lastname">Last Name</label>
 
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="age" name="age" type="number" placeholder="Enter your phone Age..." />
+                                    <input class="form-control" id="age" name="age" type="number" placeholder="Enter your phone Age..." required/>
                                     <label for="age">Age</label> 
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="licensenumber" name="licensenumber" type="text" placeholder="Enter your phone License Number..." />
+                                    <input class="form-control" id="licensenumber" name="licensenumber" type="text" placeholder="Enter your phone License Number..." required/>
                                     <label for="licensenumber">License Number</label> 
                                 </div>
                                
                                 <div class="form-floating">
-                                    <input class="form-control" id="DOB" name="DOB" type="date" placeholder="Enter your phone DOB..." />
+                                    <input class="form-control" id="DOB" name="DOB" type="date" placeholder="Enter your phone DOB..." required />
                                     <label for="DOB">DOB</label> 
                                 </div>
 
@@ -57,33 +57,57 @@
                                 <!-- Car details fields -->
                                 <h5>Car Details </h5>
                                 <div class="form-floating">
-                                    <input class="form-control" id="carmake" name="carmake" type="text" placeholder="Enter your phone Car Make..." />
+                                    <input class="form-control" id="carmake" name="carmake" type="text" placeholder="Enter your phone Car Make..." required/>
                                     <label for="carmake">Car Make</label> 
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="carmodel" name="carmodel" type="text" placeholder="Enter your phone Car Model..." />
+                                    <input class="form-control" id="carmodel" name="carmodel" type="text" placeholder="Enter your phone Car Model..." required/>
                                     <label for="carmodel">Car Model</label> 
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="manufacturedyear" name="manufacturedyear" type="text" placeholder="Enter your phone Manufactured Year..." />
+                                    <input class="form-control" id="manufacturedyear" name="manufacturedyear" type="text" placeholder="Enter your phone Manufactured Year..." required/>
                                     <label for="manufacturedyear">Manufactured Year</label> 
                                 </div>
                                 <div class="form-floating">
-                                    <input class="form-control" id="platenumber" name="platenumber" type="text" placeholder="Enter your phone Car Plate Number..." />
+                                    <input class="form-control" id="platenumber" name="platenumber" type="text" placeholder="Enter your phone Car Plate Number..." required />
                                     <label for="platenumber">Car Plate Number</label> 
                                 </div>
                              
                                 <br />
 
                                 <div class="form-floating">
-                                    <input class="form-control" id="SIN" name="SIN" type="text" placeholder="Enter your SIN..." />
+                                    <input class="form-control" id="SIN" name="SIN" type="text" placeholder="Enter your SIN..." required/>
                                     <label for="SIN">SIN Number</label> 
                                 </div>
 
                                 <br>
                                 
                                 <h5>Appointment Slots</h5>
+                                
 
+
+                                <% if (appointmentModel != null && appointmentModel.length > 0 ) { %>
+                                    <div class="form-floating">
+                                        <input class="form-control" id="apptDate" name="apptDate" value="<%=appointmentModel[0].apptDate %>" type="date" placeholder="Choose your date..." />
+                                        <label for="apptDate">Appointment Date</label>
+                                    </div>
+                                    <div class="form-floating" >
+                                        <select name="apptTime" id="apptTime">
+                                            <%
+                                            for ( var i = 0; i < appointmentModel.length; i++ )
+                                            {
+                                                var selected = ( appointmentModel[i].disabled === true ) ? "disabled" : "";
+                                                %><option value="<%=appointmentModel[i].apptTime %>" <%=selected %>><%=appointmentModel[i].apptTime %></option><%
+                                            }
+                                            %> 
+                                          </select>
+                                    </div>
+                                  
+                                <%} else { %>
+                                    <div class="error">
+                                        <label>Sorry there are no appointment slots for today</label>
+                                    </div>
+                                <% } %>
                                     
                         
 

@@ -16,6 +16,13 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7 custom-login">
                         <h1 class="signupheading">LOGIN</h1>
+
+                        <% if (invalidCred) {%>
+                            <div class="error">
+                                <label>Please enter correct credentials.</label>
+                            </div>
+                           
+                        <% } %>
                         
                         <div class="my-5">
                             <form method="POST" id="login"  action="/users/login" >

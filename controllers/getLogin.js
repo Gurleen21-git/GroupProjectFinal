@@ -1,4 +1,5 @@
 module.exports = async(req,res) => {
      global.checkUserType=null;
-     res.render('login');
+     let invalidCred= false;
+     res.render('login',{invalidCred});
 };
