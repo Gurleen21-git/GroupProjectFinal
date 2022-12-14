@@ -48,9 +48,9 @@
                                             Test Type
                                         </th>
                                         <th>
-                                            View Details
+                                            Test Result
                                         </th>
-                                
+                               
                                        
                                     </tr>
                 <% for(var i = 0; i < g2GetDetails.length; i++) {  %>
@@ -70,8 +70,10 @@
                                         <td>
                                             <%= g2GetDetails[i].testType %>
                                         </td>
+                                        <td>
+                                            <%= g2GetDetails.testResult == true? "Pass":"Fail" %>
+                                        </td>
                                       
-                                        <td>  <a href="/viewDetails/<%= g2GetDetails[i]._id %>">viewDetails</a></td>
                                     </tr>
                                     <% }  %>
                                   
