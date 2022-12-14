@@ -3,9 +3,9 @@ require("dotenv").config();
 const express= require("express");
 const path = require("path");
 const ejs= require("ejs");
-const expressSession = require("express-session");
 const mongoose= require("mongoose");
 const mongoStore= require("connect-mongo");
+const expressSession = require("express-session");
 const flash = require('connect-flash');
 const auth = require("./middlewares/auth");
 const redirectIfAuth = require("./middlewares/redirectIfAuth")
@@ -35,10 +35,11 @@ global.loggedIn = null;
 global.checkUserType=null;
 global.checkUserTypeAdmin=null;
 
-app.use(expressSession({secret: "kaur21", 
+app.use(expressSession({
+  secret: "kaur21", 
   resave: false,
   saveUninitialized: true ,
-  store: mongoStore.create({mongoUrl:process.env.MONGO_SESSION_URL})}
+  store: mongoStore.create({mongoUrl:process.env.MONGO_URL})}
  ));
 app.use("*", loggedInMiddleware)
 app.use(express.static("public"));
